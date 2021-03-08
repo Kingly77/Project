@@ -23,7 +23,7 @@
 * create a new repository (with active braches to work with)in GitHub.
 * copy SSH key from GitHub
 * * In your local computer make a directory using GitBash
-* clone the active branch using "git clone <paste the ssh key here> -b <active branch name> 
+* clone the active branch using "git clone <Url> -b <active branch name> 
 * start to work on the project using any code editor , then add ,commit and push to the git repository.
 * Now the project is locally saved in your computer and remotly saved in GitHUb.
 * After all the work is done , set your gitHub pages to main and save it.
