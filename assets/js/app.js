@@ -1,5 +1,4 @@
 
-
 let cityName= 'san jose'
 let key = '555cb8f86a8f9b99085c41f79016fb5a';
 
@@ -16,3 +15,4 @@ fetch(`http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${key}
     console.log(data['weather']['0']['main']);
     $('#weather')[0].textContent = data['weather']['0']['main'];
 })
+
