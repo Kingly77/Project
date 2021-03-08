@@ -54,7 +54,7 @@ On the top of  HTML, CSS and JavaScript, these web-page is created with:
 * Foundation
 * Jquery
 * moments.js
-
+*Dayjs
 
 ## Project status
 These project is still in developing mood, as it will be updated to a more detailed code with lots of illustrations.
