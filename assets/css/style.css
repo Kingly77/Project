@@ -44,14 +44,7 @@ body {
     
 }
 
-.weather
-{
-    font-weight: bold;
-    text-align: center;
-    font-size: 15px;
-}
-
-.time
+.data
 {
     font-size: 25px;
     text-align: center;
