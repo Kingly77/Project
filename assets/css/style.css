@@ -12,7 +12,7 @@ body {
 }
 
 .display {
-    justify-content: center; 
+    text-align: center;
     align-items: center;
     font-size: 6rem;
     font-family: cursive;
@@ -23,7 +23,7 @@ body {
 }
 
 .text {
-    justify-content: center;
+    text-align: center;
     align-items: center;
     color: rgb(248, 244, 246);
     font-size: 25px;

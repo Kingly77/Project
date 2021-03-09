@@ -25,6 +25,7 @@ function getWeather()
 
 getWeather();
 getLocalTime();
+$(`#cityName`)[0].textContent = `${cityName}`;
 
 $('#lookup').click(() =>
 {
