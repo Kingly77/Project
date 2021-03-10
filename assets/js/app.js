@@ -8,9 +8,9 @@ function getData()
     fetch(`http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${key}`).then(data => data.json()).then(data =>
     {
 
+        $('#cityName')[0].textContent = data['name'];
         $('#current-weather')[0].textContent = data['weather']['0']['main'];
         $('#current-time')[0].textContent = dayjs.utc().utcOffset(data['timezone'] / 60).format('hh:mm');
-
     })
 }
 
