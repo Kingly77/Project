@@ -1,14 +1,15 @@
 let cityName = 'San Jose'
 let key = '555cb8f86a8f9b99085c41f79016fb5a';
 
+dayjs.extend(window.dayjs_plugin_utc)
+
 function getLocalTime() {
-    fetch('https://worldtimeapi.org/api/ip')
+    fetch('https://worldtimeapi.org/api/timezone/Africa/Ndjamena')
         .then(data => data.json())
         .then(data => {
             console.log(data);
-
-            console.log(data['datetime']);
-            let day = dayjs(data["datetime"]);
+            let day = dayjs.utc(data["datetime"]);
+            console.log(day);
             $('#current-time')[0].textContent = day.format('hh:mm');
 
         })
@@ -25,6 +26,7 @@ function getWeather() {
 
 getWeather();
 getLocalTime();
+
 $(`#cityName`)[0].textContent = `${cityName}`;
 
 $('#lookup').click(() => {
