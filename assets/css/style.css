@@ -7,7 +7,8 @@ body {
 }
 
 .clock {
-    background-color: rgb(201, 152, 176);
+    background-color: #d0792e /*rgb(201, 152, 176)*/;
+    color: whitesmoke;
     background-size: cover;
 }
 
@@ -18,7 +19,7 @@ body {
     font-family: cursive;
     font-weight: bolder;
     font-style: italic;
-    color: rgb(49, 4, 23);
+    color:whitesmoke /*rgb(49, 4, 23)*/;
 
 }
 
@@ -46,7 +47,7 @@ body {
 
 .data
 {
-    font-size: 25px;
+    font-size: 55px;
     text-align: center;
     font-weight: bold;
 }
@@ -58,7 +59,7 @@ body {
 }
 
 .button {
-    background-color: rgb(177, 52, 114);
+    background-color: #000fff; /*rgb(177, 52, 114);*/
     color: white ;
     border-radius: 6px;
     

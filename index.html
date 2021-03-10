@@ -1,43 +1,59 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8" >
+    <meta charset="UTF-8">
     <title>world Clock</title>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Staatliches&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Staatliches&display=swap"
+          rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.2/dist/css/foundation.min.css">
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.4/dayjs.min.js"></script>
-    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.4/plugin/utc.js"></script>
+    <script src="https://kit.fontawesome.com/71d6379c77.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
 
- </head>
- <body> 
-    <!--<div class="image">
-        <img src="./assets/images/james-lee-O0SDcGZY8Ao-unsplash.jpg" >
-    </div>> -->
-  
-    <div class='grid-x'>
+</head>
+
+<body>
+<!--<div class="image">
+    <img src="./assets/images/james-lee-O0SDcGZY8Ao-unsplash.jpg" >
+</div>> -->
+
+<div class='grid-x '>
+
+
+    <div class="clock cell">
+        <ul class="menu">
+            <li><label><input type="search" placeholder="Enter city name" id='input' class="input"></label></li>
+            <li>
+                <button type="button" class="button" id="lookup">Search</button>
+            </li>
+        </ul>
+
+    </div>
+
     <header class="clock cell">
         <h1 class="display"> World Clock </h1>
-        <i class="fab fa-apple" style="font-size:48px;color:rgb(131, 26, 26);"></i>
+        <i class="fab fa-linux" style="font-size:48px;color:rgb(148,52,52);"></i>
         <p class="text">Yes! search it and our clock will pop up!</p>
+
+    </header>
+
+
+    <div class='info cell'>
         <p id='cityName' class="data"></p>
         <p id="current-time" class="data"></p>
         <p id="current-weather" class="data"></p>
-        <div>
-          <ul class="menu">
-                <li><label><input type="search" placeholder="Search" id='input' class="input"></label></li>
-                <li><button type="button" class="button" id="lookup">Search</button></li>
-              </ul>
-            
-          </div>
-
-     </header>
     </div>
+
+
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/min/moment-with-locales.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.2/dist/js/foundation.min.js"></script>
 <script src="assets/js/app.js" rel="script" type="text/javascript"></script>
 </body>
+
 </html>
