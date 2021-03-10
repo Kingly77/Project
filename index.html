@@ -19,23 +19,34 @@
         <img src="./assets/images/james-lee-O0SDcGZY8Ao-unsplash.jpg" >
     </div>> -->
 
-    <div class='grid-x'>
+    <div class='grid-x '>
+
+
+        <div class="clock cell">
+            <ul class="menu">
+                <li><label><input type="search" placeholder="Enter city name" id='input' class="input"></label></li>
+                <li><button type="button" class="button" id="lookup">Search</button></li>
+            </ul>
+
+        </div>
+
         <header class="clock cell">
             <h1 class="display"> World Clock </h1>
             <i class="fab fa-apple" style="font-size:48px;color:rgb(131, 26, 26);"></i>
             <p class="text">Yes! search it and our clock will pop up!</p>
+
+        </header>
+
+
+        <div class='clock cell'>
             <p id='cityName' class="data"></p>
             <p id="current-time" class="data"></p>
             <p id="current-weather" class="data"></p>
-            <div>
-                <ul class="menu">
-                    <li><label><input type="search" placeholder="Enter city name" id='input' class="input"></label></li>
-                    <li><button type="button" class="button" id="lookup">Search</button></li>
-                </ul>
+        </div>
 
-            </div>
 
-        </header>
+
+
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/min/moment-with-locales.min.js"></script>
