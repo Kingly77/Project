@@ -16,7 +16,7 @@ function getData()
         
         console.log(currentWeather);
         $('#current-weather').text(currentWeather);
-        currentTime = dayjs.utc().utcOffset(data['timezone'] / 60).format('hh:mm');
+        currentTime = dayjs.utc().utcOffset(data['timezone'] / 60).format('HH:mm');
          $('#current-time').text(currentTime);
         getIcon(currentWeather, currentTime);
     })
@@ -52,12 +52,12 @@ function getIcon(weather, time)
             console.log(currentIcon);
             break;
         case "Clear":
-            if(/^./.regex(time) > 7) {
+            if(/^../.exec(time) > 19) {
                 currentIcon.setAttribute("src", "./assets/images/Night clear.png");
                 break;
             }
-            else {
-            currentIcon.setAttribute("src", "./assets/images/sunny(1).png");
+            else if(/^../.exec(time) <= 19) {
+            currentIcon.setAttribute("src", "./assets/images/sunny.png");
             break;
             }
         case "Snow":
@@ -67,12 +67,14 @@ function getIcon(weather, time)
             currentIcon.setAttribute("src", "./assets/images/hail.png");
             break;
         case "Rain":
-            if(/^./.regex(time) > 7) {
+            if(/^../.exec(time) > 19) {
                 currentIcon.setAttribute("src", "./assets/images/Night rain.png");
                 break;
             }
+            else if(/^../.exec(time) <= 19) {
             currentIcon.setAttribute("src", "./assets/images/rain.png");
-            break;       
+            break;
+            }       
             
     }
 
