@@ -11,14 +11,20 @@ function getData()
     fetch(`http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${key}`).then(data => data.json()).then(data =>
     {
         
-        $('#cityName')[0].textContent = data['name'];
+        $('#cityName').text(data['name']);
         currentWeather = data['weather']['0']['main'];
         
         console.log(currentWeather);
-        $('#current-weather')[0].textContent = currentWeather;
+        $('#current-weather').text(currentWeather);
         currentTime = dayjs.utc().utcOffset(data['timezone'] / 60).format('hh:mm');
-         $('#current-time')[0].textContent = currentTime;
-        getIcon("Rain", "8:00");
+         $('#current-time').text(currentTime);
+        getIcon(currentWeather, currentTime);
+    })
+    .catch(function(error) {
+        $('#exampleModal1').foundation('open');
+        $(".lead").text(error);
+        
+
     })
 }
 
@@ -46,12 +52,14 @@ function getIcon(weather, time)
             console.log(currentIcon);
             break;
         case "Clear":
-            if(/^./.exec(time) > 7) {
+            if(/^./.regex(time) > 7) {
                 currentIcon.setAttribute("src", "./assets/images/Night clear.png");
                 break;
             }
+            else {
             currentIcon.setAttribute("src", "./assets/images/sunny(1).png");
             break;
+            }
         case "Snow":
             currentIcon.setAttribute("src", "./assets/images/snow.png");
             break;
@@ -59,7 +67,7 @@ function getIcon(weather, time)
             currentIcon.setAttribute("src", "./assets/images/hail.png");
             break;
         case "Rain":
-            if(/^./.exec(time) > 7) {
+            if(/^./.regex(time) > 7) {
                 currentIcon.setAttribute("src", "./assets/images/Night rain.png");
                 break;
             }
