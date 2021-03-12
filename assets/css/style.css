@@ -3,6 +3,8 @@ body {
     padding: 0;
     background-image: url(../images/chirayu-trivedi-pTb54lkyuNQ-unsplash.jpg);
     background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #c9c8c9;
     
 }
 
