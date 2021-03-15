@@ -63,6 +63,7 @@ body {
 .button {
     background-color: #000fff; /*rgb(177, 52, 114);*/
     color: white ;
+    height: 40px;
     border-radius: 6px;
     
 }
