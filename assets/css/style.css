@@ -63,6 +63,7 @@ body {
 .button {
     background-color: #000fff; /*rgb(177, 52, 114);*/
     color: white ;
+    height: 40px;
     border-radius: 6px;
     
 }
@@ -70,4 +71,21 @@ body {
 .button:hover {
     background-color: black;
     color: white;
+}
+
+.currencySearch{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.currency{
+    margin:0;
+}
+.currencySearch{
+    margin:0;
+    padding: 0;
+}
+.title{
+    font-weight: bold;
+    font-size: 25px;
 }
