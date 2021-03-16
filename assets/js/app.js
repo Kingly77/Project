@@ -76,3 +76,37 @@ function getIcon(weather, time) {
 
 }
 getIcon();
+
+// Currency Exchange from USD to any countries currency. (the api supports only from usd as it is the free version)
+let fromCurrency = document.querySelector('#changeCurrencyFrom');
+let toCurrency = document.querySelector('#changeCurrencyTo');
+let searchCurrencyBtn = document.querySelector('#searchCurrency');
+let currencyValue = document.querySelector('#currencyValue');
+const API_key = 'b9abb88daff5a584e21b6adf06558544';
+
+function getCurrencyData(search) {
+    fetch(`http://api.currencylayer.com/live?access_key=${API_key}`)
+        .then(response => response.json())
+        .then(data => {
+            let currencies = data.quotes;
+            console.log(currencies[search]);
+            currencyValue.textContent = currencies[search];
+
+        })
+        .catch(function (error) {
+            $('#exampleModal1').foundation('open');
+            $(".lead").text(error);
+        })
+}
+
+searchCurrencyBtn.addEventListener("click", function () {
+    let from = fromCurrency.value;
+    let to = toCurrency.value;
+
+    let search = from + to;
+    search = search.toUpperCase();
+
+    getCurrencyData(search);
+});
+
+
