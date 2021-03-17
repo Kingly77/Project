@@ -82,9 +82,13 @@ let fromCurrency = document.querySelector('#changeCurrencyFrom');
 let toCurrency = document.querySelector('#changeCurrencyTo');
 let searchCurrencyBtn = document.querySelector('#searchCurrency');
 let currencyValue = document.querySelector('#currencyValue');
+let toCurrencyName = document.querySelector('#toCurrencyName');
+let fromCurrencyName = document.querySelector('#fromCurrencyName');
+let display = document.querySelector("#display");
 const API_key = 'b9abb88daff5a584e21b6adf06558544';
 
 function getCurrencyData(search) {
+    display.classList.remove("hidden");
     fetch(`http://api.currencylayer.com/live?access_key=${API_key}`)
         .then(response => response.json())
         .then(data => {
@@ -102,10 +106,10 @@ function getCurrencyData(search) {
 searchCurrencyBtn.addEventListener("click", function () {
     let from = fromCurrency.value;
     let to = toCurrency.value;
-
+    fromCurrencyName.textContent = from.toUpperCase();
     let search = from + to;
     search = search.toUpperCase();
-
+    toCurrencyName.textContent = to.toUpperCase();
     getCurrencyData(search);
 });
 
