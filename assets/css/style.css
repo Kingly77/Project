@@ -88,4 +88,25 @@ body {
 .title{
     font-weight: bold;
     font-size: 25px;
+    text-align: center;
+}
+.hidden{
+    display: none;
+}
+.currency-data{
+    font-size: 35px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.card_w
+{
+    width: 350px;
+    margin-left: 50%;
+}
+
+.card_s
+{
+    width: 350px;
+
 }
