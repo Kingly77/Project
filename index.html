@@ -81,12 +81,13 @@
 
 <div id="container">
     <div class="card card_w hidden" id="weather">
-        <img id="forecast" alt="weather"/>
+
         <div class="card-section">
-            <div class="grid-y">
-                <p id='cityName' class="data cell"></p>
-                <p id="current-time" class="data cell"></p>
-                <p id="current-weather" class="data cell"></p>
+            <div class="grid-x">
+                <div id='cityName' class="cell small-4 data"></div>
+                <div id="current-time" class="cell small-4 data"></div>
+                <div id="current-weather" class="cell small-4 data"></div>
+                <div class="cell small-3 small-offset-9"><img id="forecast" alt="weather" width="300px" height="300px"/></div>
             </div>
         </div>
     </div>
