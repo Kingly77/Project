@@ -42,7 +42,7 @@
 <!--    <div class="grid-x">-->
 <!-- card to show the data from the weather and time search -->
 <div data-sticky-container  class="right card_s">
-    <div class="cell small-3 sticky" data-sticky data-anchor="weather" data-margin-top="0">
+    <div class="cell small-3 sticky" data-sticky data-anchor="container" data-margin-top="0">
         <div class="card">
             <div class="card-divider">
                 <!-- <div class="cell"> -->
@@ -56,7 +56,7 @@
 
     <div class="cell"></div>
     <!-- card to show data from currency exchange -->
-    <div class="card sticky" data-sticky data-anchor="weather" data-margin-top="5">
+    <div class="card sticky" data-sticky data-anchor="container" data-margin-top="5">
         <div class="card-divider">
             <h4 class="title">Currency Converter</h4>
         </div>
@@ -79,13 +79,16 @@
     </div>
 </div>
 
-
-<div class="card card_w" id="weather">
-    <img id="forecast" alt="weather"/>
-    <div class="card-section">
-        <p id='cityName' class="data"></p>
-        <p id="current-time" class="data"></p>
-        <p id="current-weather" class="data"></p>
+<div id="container">
+    <div class="card card_w hidden" id="weather">
+        <img id="forecast" alt="weather"/>
+        <div class="card-section">
+            <div class="grid-y">
+                <p id='cityName' class="data cell"></p>
+                <p id="current-time" class="data cell"></p>
+                <p id="current-weather" class="data cell"></p>
+            </div>
+        </div>
     </div>
 </div>
 <!--    </div>-->
