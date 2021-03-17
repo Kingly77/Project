@@ -98,3 +98,15 @@ body {
     text-align: center;
     font-weight: bold;
 }
+
+.card_w
+{
+    width: 350px;
+    margin-left: 50%;
+}
+
+.card_s
+{
+    width: 350px;
+
+}

@@ -7,9 +7,9 @@
     <title>world Clock</title>
     <link rel="shortcut icon" href="./assets/images/favicon.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Staatliches&display=swap"
-        rel="stylesheet">
+          rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
-        integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
+          integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.4/dayjs.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.4/plugin/utc.js"></script>
     <script src="https://kit.fontawesome.com/71d6379c77.js" crossorigin="anonymous"></script>
@@ -29,100 +29,77 @@
 <body>
 
 
-    <div class='grid-x '>
+<div class='grid-x '>
 
 
-        <header class="clock cell">
-            <h1 class="display"> World Clock </h1>
+    <header class="clock cell">
+        <h1 class="display"> World Clock </h1>
 
-            <p class="text">Yes! search it and our clock will pop up!</p>
+        <p class="text">Yes! search it and our clock will pop up!</p>
 
-        </header>
+    </header>
 
+</div>
 
-
-
-    </div>
-    <div class="grid-x">
-        <!-- <div class="grid-x">
-
-        <div class="cell">
-            <ul class="menu">
-            <li>
-            <label><input type="search" placeholder="Enter city name" id='input' class="input"></label>
-            </li>
-            <li>
-            <button type="button" class="button" id="lookup" data-tooltip tabindex="1" title="Search"
-                data-position="right" data-alignment="center"><i class="fas fa-search"></i></button>
-            </li>
-            </ul>
-
-        </div>
-
-        <div class="cell small-6" id="icon">
-            <img id="forecast"></img>
-
-        </div>
-
-        <div class='info cell small-6'>
-            <p id='cityName' class="data"></p>
-            <p id="current-time" class="data"></p>
-            <p id="current-weather" class="data"></p>
-        </div>
-
-        </div> -->
-
-        <!-- card to show the data from the weather and time search -->
-        <div class="cell">
-            <div class="card" style="width: 300px;">
-                <div class="card-divider">
-                    <!-- <div class="cell"> -->
-                    <input type="search" placeholder="Enter city name" id='input' class="input">
-                    <button type="button" class="button" id="lookup" data-tooltip tabindex="1" title="Search"
+<!--    <div class="grid-x">-->
+<!-- card to show the data from the weather and time search -->
+<div data-sticky-container  class="right card_s">
+    <div class="cell small-3 sticky" data-sticky data-anchor="weather" data-margin-top="0">
+        <div class="card">
+            <div class="card-divider">
+                <!-- <div class="cell"> -->
+                <input type="search" placeholder="Enter city name" id='input' class="input">
+                <button type="button" class="button" id="lookup" data-tooltip tabindex="1" title="Search"
                         data-position="right" data-alignment="center"><i class="fas fa-search"></i></button>
-                    <!-- </div> -->
-                </div>
-                <img id="forecast"></img>
-                <div class="card-section">
-                    <p id='cityName' class="data"></p>
-                    <p id="current-time" class="data"></p>
-                    <p id="current-weather" class="data"></p>
-                </div>
-            </div>
-        </div>
-        <!-- card to show data from currency exchange -->
-        <div class="cell">
-            <div class="card" style="width: 350px;">
-                <div class="card-divider">
-                    <h4 class="title">Currency Converter</h4>
-                </div>
-                <!-- From and To seaarchbars -->
-                <div class="card-section currencySearch">
-                    <input type="search" id="changeCurrencyFrom" placeholder="From">
-
-                    <input type="search" name="changeTo" id="changeCurrencyTo" placeholder="To">
-                    <button type="button" class="button currency" id="searchCurrency">Convert</i></button>
-                </div>
-                <div class="card-section currencySearch">
-
-                </div>
-                <div class="card-section hidden" id="display">
-
-                    <p class="currency-data">1 <span id="fromCurrencyName"></span> = <span
-                            id="currencyValue"></span><span id="toCurrencyName"> </span></p>
-
-                </div>
+                <!-- </div> -->
             </div>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/min/moment-with-locales.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
+
+    <div class="cell"></div>
+    <!-- card to show data from currency exchange -->
+    <div class="card sticky" data-sticky data-anchor="weather" data-margin-top="5">
+        <div class="card-divider">
+            <h4 class="title">Currency Converter</h4>
+        </div>
+        <!-- From and To searchbars -->
+        <div class="card-section currencySearch">
+            <input type="search" id="changeCurrencyFrom" placeholder="From">
+
+            <input type="search" name="changeTo" id="changeCurrencyTo" placeholder="To">
+            <button type="button" class="button currency" id="searchCurrency">Convert</button>
+        </div>
+        <div class="card-section currencySearch">
+
+        </div>
+        <div class="card-section hidden" id="display">
+
+            <p class="currency-data">1 <span id="fromCurrencyName"></span> = <span
+                    id="currencyValue"></span><span id="toCurrencyName"> </span></p>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="card card_w" id="weather" style="width: 500px; margin-left: 50%">
+    <img id="forecast" alt="weather"/>
+    <div class="card-section">
+        <p id='cityName' class="data"></p>
+        <p id="current-time" class="data"></p>
+        <p id="current-weather" class="data"></p>
+    </div>
+</div>
+<!--    </div>-->
+
+<script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/min/moment-with-locales.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
         integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
-    <script>
-        $(document).foundation();
-    </script>
-    <script src="assets/js/app.js" rel="script" type="text/javascript"></script>
+<script>
+    $(document).foundation();
+</script>
+<script src="assets/js/app.js" rel="script" type="text/javascript"></script>
 </body>
 
 </html>
