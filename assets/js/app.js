@@ -7,7 +7,7 @@ dayjs.extend(window.dayjs_plugin_utc)
 
 function getData() {
 
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${key}`).then(data => data.json()).then(data => {
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${key}`).then(data => data.json()).then(data => {
 
         $('#cityName').text(data['name']);
         currentWeather = data['weather']['0']['main'];
@@ -95,6 +95,7 @@ const API_key = 'b9abb88daff5a584e21b6adf06558544';
 
 function getCurrencyData(search) {
     display.removeClass("hidden");
+    console.log(search)
     fetch(`http://api.currencylayer.com/live?access_key=${API_key}`)
         .then(response => response.json())
         .then(data => {
