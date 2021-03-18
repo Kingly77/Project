@@ -6,17 +6,12 @@
     <meta charset="UTF-8">
     <title>world Clock</title>
     <link rel="shortcut icon" href="./assets/images/favicon.png" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Staatliches&display=swap"
-          rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
-          integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.4/dayjs.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.4/plugin/utc.js"></script>
-    <script src="https://kit.fontawesome.com/71d6379c77.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Staatliches&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
 
 </head>
-
+<!-- Error handler-->
 <div class="reveal" id="exampleModal1" data-reveal>
     <h1>Error!!</h1>
     <p class="lead"></p>
@@ -24,6 +19,7 @@
         <span aria-hidden="true">&times;</span>
     </button>
 </div>
+<!--end of Error Handler-->
 
 <body>
 
@@ -42,7 +38,7 @@
 <!--    <div class="grid-x">-->
 <!-- card to show the data from the weather and time search -->
 <div data-sticky-container  class="right card_s">
-    <div class="cell small-3 sticky" data-sticky data-anchor="container" data-margin-top="0">
+    <div class="cell small-3 sticky" data-sticky data-anchor="weather" data-margin-top="0">
         <div class="card">
             <div class="card-divider">
                 <!-- <div class="cell"> -->
@@ -56,7 +52,7 @@
 
     <div class="cell"></div>
     <!-- card to show data from currency exchange -->
-    <div class="card sticky" data-sticky data-anchor="container" data-margin-top="5">
+    <div class="card sticky" data-sticky data-anchor="weather" data-margin-top="5">
         <div class="card-divider">
             <h4 class="title">Currency Converter</h4>
         </div>
@@ -79,25 +75,22 @@
     </div>
 </div>
 
-<div id="container">
-    <div class="card card_w hidden" id="weather">
 
-        <div class="card-section">
-            <div class="grid-x">
-                <div id='cityName' class="cell small-4 data"></div>
-                <div id="current-time" class="cell small-4 data"></div>
-                <div id="current-weather" class="cell small-4 data"></div>
-                <div class="cell small-3 small-offset-9"><img id="forecast" alt="weather" width="300px" height="300px"/></div>
-            </div>
-        </div>
+<div class="card card_w" id="weather">
+    <img id="forecast" alt="weather"/>
+    <div class="card-section">
+        <p id='cityName' class="data"></p>
+        <p id="current-time" class="data"></p>
+        <p id="current-weather" class="data"></p>
     </div>
 </div>
 <!--    </div>-->
-
+<script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.4/dayjs.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.4/plugin/utc.js"></script>
+<script src="https://kit.fontawesome.com/71d6379c77.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/min/moment-with-locales.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
-        integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
 <script>
     $(document).foundation();
 </script>
