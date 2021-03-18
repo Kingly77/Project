@@ -1,22 +1,20 @@
-#  World-Clock
+#  Weather-Clock-with-Currency-Converter
 
 # Description
-  The World clock is an app that helps the user/client find the current time , current weather accompined with the current icon and background image of that specific weather condition.
-
-  Our app allows users to see the current money exchange from USD to other conties currencies.
-  * * NOTE: The currency exchange works only from USD.
+  The World clock is an app that helps the user/client find the current time, current weather accompined by the current icon and background image of that specific weather condition. It also allows users to see the exchange rates from USD to other currencies.
+  
   
   Our projects meets the quality requirements, such as:
-   * used two server-side Api associated with Api Keys.
+   * Uses two server-side Api associated with Api Keys.
    * It is fully responsive.
    * Applied almost all sets of the course module
    * It is User interactive.
    * it is highly polished
-   * It uses a css framework other than bootsrap ,called Foundation.
+   * It uses a front-end framework other than bootstrap, called Foundation.
    * Has client side storage to stroge persistent data has no stored data 
-   * uses Modals instade of alerts, prompts and confirms
-   * comments properly applied.
-   * all codes are properly indented.
+   * Uses Modals instade of alerts, prompts and confirms
+   * Ccomments properly applied.
+   * Code is properly indented.
   
   Here is a link to our project:
 
@@ -35,11 +33,11 @@
 * [Contact](#contact)
 
 ## Installation
-* create a new repository (with active braches to work with)in GitHub.
-* copy SSH key from GitHub
-* * In your local computer make a directory using GitBash
-* clone the active branch using "git clone <Url> -b <active branch name> 
-* start to work on the project using any code editor , then add ,commit and push to the git repository.
+* Create a new repository (with active braches to work with)in GitHub.
+* Copy SSH key from GitHub
+* In your local computer make a directory using GitBash
+* Clone the active branch using "git clone <Url> -b <active branch name> 
+* Start to work on the project using any code editor , then add ,commit and push to the git repository.
 * Now the project is locally saved in your computer and remotly saved in GitHUb.
 * After all the work is done , set your gitHub pages to main and save it.
 * Now the project is live on the web.
@@ -50,27 +48,30 @@ Screen shot
 
 
 ## Credits
-Our project is based and inspired by;
+Our project is based and inspired by:
  * The course module
  * Google
  
 
 
 ## Technologies
-* On the top of the basic HTML,CSS and JavaScript, our project is based on:
+On top of the basic HTML, CSS and JavaScript, our project uses:
 * Days.js
 * Foundation
 * Jquery
+
+As well as API's :
 * Open weather Maps
+* Currency Freaks
 
 
 ## Project status
-These project is still in developing mood, as it will be updated to a more detailed code with lots of illustrations.
+This project is still in developing mode, as it will be updated to a more detailed code with lots of illustrations.
 
 
 ## Contact
  * These project is Created by: 
-  * Shellby Jorday
+  * Shelby Jordan
   * Cynthia Mohan
   * Jesus Ramirez Arroyo
   * Senait Gerezgiher
