@@ -52,13 +52,13 @@ function getIcon(weather, time) {
             break;
         case "Clear":
 
-            if(/^../.exec(time) > 19) {
+            if (/^../.exec(time) > 19) {
                 currentIcon.setAttribute("src", "./assets/images/Night clear.png");
                 break;
             }
-            else if(/^../.exec(time) <= 19) {
-            currentIcon.setAttribute("src", "./assets/images/sunny.png");
-            break;
+            else if (/^../.exec(time) <= 19) {
+                currentIcon.setAttribute("src", "./assets/images/sunny.png");
+                break;
 
             }
         case "Snow":
@@ -68,15 +68,15 @@ function getIcon(weather, time) {
             currentIcon.setAttribute("src", "./assets/images/hail.png");
             break;
         case "Rain":
-            if(/^../.exec(time) > 19) {
+            if (/^../.exec(time) > 19) {
                 currentIcon.setAttribute("src", "./assets/images/Night rain.png");
                 break;
             }
-            else if(/^../.exec(time) <= 19) {
-            currentIcon.setAttribute("src", "./assets/images/rain.png");
-            break;
-            }       
-            
+            else if (/^../.exec(time) <= 19) {
+                currentIcon.setAttribute("src", "./assets/images/rain.png");
+                break;
+            }
+
     }
 
 
@@ -85,24 +85,31 @@ getIcon();
 
 // Currency Exchange from USD to any countries currency. (the api supports only from usd as it is the free version)
 let fromCurrency = $('#changeCurrencyFrom');
+$('#changeCurrencyFrom').val("USD");
 let toCurrency = $('#changeCurrencyTo');
 let searchCurrencyBtn = $('#searchCurrency');
 let currencyValue = $('#currencyValue');
 let toCurrencyName = $('#toCurrencyName');
 let fromCurrencyName = $('#fromCurrencyName');
 let display = $("#display");
-const API_key = 'b9abb88daff5a584e21b6adf06558544';
+const API_key = '987fc53b7ae54560adc503005e61ccb9';
 
 function getCurrencyData(search) {
     display.removeClass("hidden");
     console.log(search)
-    fetch(`http://api.currencylayer.com/live?access_key=${API_key}`)
+    fetch(`https://api.currencyfreaks.com/latest?apikey=${API_key}`)
         .then(response => response.json())
         .then(data => {
-            let currencies = data.quotes;
-            console.log(currencies[search]);
-            currencyValue.text(` ${currencies[search]} `);
+            let currencies = data.rates;
 
+            if (!currencies[search]) {
+                display.addClass("hidden");
+                $('#exampleModal1').foundation('open');
+                $(".lead").text("Invalid Country code");
+            }
+            else {
+                currencyValue.text(` ${currencies[search]} `);
+            }
         })
         .catch(function (error) {
             $('#exampleModal1').foundation('open');
@@ -110,12 +117,19 @@ function getCurrencyData(search) {
         })
 }
 
-searchCurrencyBtn.click("click",()=>{
+searchCurrencyBtn.click("click", () => {
     let from = fromCurrency.val();
+    console.log(from);
     let to = toCurrency.val();
-    fromCurrencyName.text(from.toUpperCase());
-    let search = from + to;
-    search = search.toUpperCase();
-    toCurrencyName.text(to.toUpperCase());
-    getCurrencyData(search);
+    if (from && to) { //checks if both fields are present
+        fromCurrencyName.text(from.toUpperCase());
+        let search = from + to;
+        search = search.toUpperCase();
+        toCurrencyName.text(to.toUpperCase());
+        getCurrencyData(to.toUpperCase());
+    }
+    else {
+        $('#exampleModal1').foundation('open');
+        $(".lead").text("Please enter valid 3 letter country code");
+    }
 });
