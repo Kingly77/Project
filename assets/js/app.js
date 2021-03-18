@@ -85,6 +85,7 @@ getIcon();
 
 // Currency Exchange from USD to any countries currency. (the api supports only from usd as it is the free version)
 let fromCurrency = $('#changeCurrencyFrom');
+$('#changeCurrencyFrom').val("USD");
 let toCurrency = $('#changeCurrencyTo');
 let searchCurrencyBtn = $('#searchCurrency');
 let currencyValue = $('#currencyValue');
@@ -118,6 +119,7 @@ function getCurrencyData(search) {
 
 searchCurrencyBtn.click("click", () => {
     let from = fromCurrency.val();
+    console.log(from);
     let to = toCurrency.val();
     if (from && to) { //checks if both fields are present
         fromCurrencyName.text(from.toUpperCase());
