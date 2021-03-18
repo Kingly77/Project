@@ -15,6 +15,8 @@
    * It uses a css framework other than bootsrap ,called Foundation.
    * Has client side storage to stroge presistenet data
    * uses Modals instade of alerts, prompts and confirms
+   * comments properly applied.
+   * all codes are properly indented.
   
   Here is a link to our project:
 
@@ -50,7 +52,7 @@ Screen shot
 ## Credits
 Our project is based and inspired by;
  * The course module
- * our fried Googel
+ * our frined Googel
  
 
 
@@ -60,7 +62,7 @@ Our project is based and inspired by;
 * Moment.js
 * Foundation
 * Jquery
-* OpenweatherMaps
+* Open weather Maps
 
 
 ## Project status
