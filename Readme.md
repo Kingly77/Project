@@ -70,7 +70,7 @@ This project is still in developing mode, as it will be updated to a more detail
 
 
 ## Contact
- * These project is Created by: 
+Our Team: 
   * Shelby Jordan
   * Cynthia Mohan
   * Jesus Ramirez Arroyo
