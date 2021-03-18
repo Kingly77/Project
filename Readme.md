@@ -1,4 +1,4 @@
-#  world-Clock
+#  World-Clock
 
 # Description
   The World clock is an app that helps the user/client find the current time , current weather accompined with the current icon and background image of that specific weather condition.
@@ -7,13 +7,13 @@
   * * NOTE: The currency exchange works only from USD.
   
   Our projects meets the quality requirements, such as:
-   * used two server-side Api associated with Api KEYs.
+   * used two server-side Api associated with Api Keys.
    * It is fully responsive.
    * Applied almost all sets of the course module
    * It is User interactive.
    * it is highly polished
    * It uses a css framework other than bootsrap ,called Foundation.
-   * Has client side storage to stroge presistenet data
+   * Has client side storage to stroge persistent data has no stored data 
    * uses Modals instade of alerts, prompts and confirms
    * comments properly applied.
    * all codes are properly indented.
@@ -52,14 +52,13 @@ Screen shot
 ## Credits
 Our project is based and inspired by;
  * The course module
- * our frined Googel
+ * Google
  
 
 
 ## Technologies
 * On the top of the basic HTML,CSS and JavaScript, our project is based on:
 * Days.js
-* Moment.js
 * Foundation
 * Jquery
 * Open weather Maps
