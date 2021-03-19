@@ -9,16 +9,26 @@ function getData() {
 
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${key}`).then(data => data.json()).then(data => {
 
-        $('#cityName').text(data['name']);
-        currentWeather = data['weather']['0']['main'];
+        if (data['name']) {
 
-        console.log(currentWeather);
-        $('#current-weather').text(currentWeather);
-        currentTime = dayjs.utc().utcOffset(data['timezone'] / 60).format('HH:mm');
+            $('#cityName').text(data['name']);
+            currentWeather = data['weather']['0']['main'];
 
-        $('#current-time').text(currentTime);
+            console.log(currentWeather);
+            $('#current-weather').text(currentWeather);
+            currentTime = dayjs.utc().utcOffset(data['timezone'] / 60).format('HH:mm');
 
-        getIcon(currentWeather, currentTime);
+            $('#current-time').text(currentTime);
+
+            getIcon(currentWeather, currentTime);
+        }
+        else {
+            $('#weather').addClass('hide');
+            $('#exampleModal1').foundation('open');
+            $(".lead").text("Please enter a valid city name");
+
+        }
+
     })
         .catch(function (error) {
             $('#exampleModal1').foundation('open');
@@ -47,73 +57,73 @@ function getIcon(weather, time) {
     switch (weather) {
         case "Clouds":
 
-            if(currentTime > 19 || currentTime < 5) {
+            if (currentTime > 19 || currentTime < 5) {
                 currentIcon.setAttribute("src", "./assets/images/clouds-night-icon.png");
                 document.body.style.backgroundImage = "url('./assets/images/cloudy-new.jpg')";
                 break;
             }
-            else  {
-            currentIcon.setAttribute("src", "./assets/images/cloudy_daytime.png");
-            document.body.style.backgroundImage = "url('./assets/images/cloud-d.jpg')";
-            
-            break;
+            else {
+                currentIcon.setAttribute("src", "./assets/images/cloudy_daytime.png");
+                document.body.style.backgroundImage = "url('./assets/images/cloud-d.jpg')";
+
+                break;
 
             }
         case "Clear":
 
-            if(currentTime > 19 || currentTime < 5) {
+            if (currentTime > 19 || currentTime < 5) {
                 currentIcon.setAttribute("src", "./assets/images/clear-night-icon.png");
                 document.body.style.backgroundImage = "url('./assets/images/night.jpg')"
-                document.body.style.color = 'white' ;
+                document.body.style.color = 'white';
                 break;
             }
-            else  {
-            currentIcon.setAttribute("src", "./assets/images/clear-dayicon.png");
-            document.body.style.backgroundImage = "url('./assets/images/clear-d.jpg')";
-            break;
+            else {
+                currentIcon.setAttribute("src", "./assets/images/clear-dayicon.png");
+                document.body.style.backgroundImage = "url('./assets/images/clear-d.jpg')";
+                break;
 
             }
-            case "Snow":
+        case "Snow":
 
-                if(currentTime > 19 || currentTime < 5) {
-                    currentIcon.setAttribute("src", "./assets/images/snowy-night-icon.jpg");
-                    document.body.style.backgroundImage = "url('./assets/images/snow-d.jpg')";
-                    break;
-                }
-                else  {
+            if (currentTime > 19 || currentTime < 5) {
+                currentIcon.setAttribute("src", "./assets/images/snowy-night-icon.jpg");
+                document.body.style.backgroundImage = "url('./assets/images/snow-d.jpg')";
+                break;
+            }
+            else {
                 currentIcon.setAttribute("src", "./assets/images/snowy-dayicon.jpg");
                 document.body.style.backgroundImage = "url('./assets/images/snow-d.jpg')";
                 break;
-    
-                }
-            case "Hail":
 
-              if(currentTime > 19 || currentTime < 5) {
+            }
+        case "Hail":
+
+            if (currentTime > 19 || currentTime < 5) {
                 currentIcon.setAttribute("src", "./assets/images/hail-icon.png");
                 document.body.style.backgroundImage = "url('./assets/images/hail-n.jpg')";
                 break;
-                }
-                else  {
+            }
+            else {
                 currentIcon.setAttribute("src", "./assets/images/hail-icon.png");
                 document.body.style.backgroundImage = "url('./assets/images/hail-d.jpg')";
                 break;
-        
-                }
+
+            }
         case "Rain":
-            if(currentTime > 19 || currentTime < 5 ) {
+            if (currentTime > 19 || currentTime < 5) {
                 currentIcon.setAttribute("src", "./assets/images/rainy-dayicon.png");
                 document.body.style.backgroundImage = "url('./assets/images/rainy-d.jpg')";
-                
-                
+
+
                 break;
             }
             else {
                 currentIcon.setAttribute("src", "./assets/images/rainy-dayicon.png");
                 document.body.style.backgroundImage = "url('./assets/images/rainy-d.jpg)";
                 document.body.style.color = "white";
-            break;
-            }       
-            
+                break;
+            }
+
     }
 
 
@@ -133,7 +143,7 @@ let display = $("#display");
 const API_key = '987fc53b7ae54560adc503005e61ccb9';
 
 function getCurrencyData(search) {
-    display.removeClass("hidden");
+    display.removeClass("hide");
     console.log(search)
     fetch(`https://api.currencyfreaks.com/latest?apikey=${API_key}`)
         .then(response => response.json())
@@ -141,7 +151,7 @@ function getCurrencyData(search) {
             let currencies = data.rates;
 
             if (!currencies[search]) {
-                display.addClass("hidden");
+                display.addClass("hide");
                 $('#exampleModal1').foundation('open');
                 $(".lead").text("Invalid Country code");
             }
@@ -161,8 +171,6 @@ searchCurrencyBtn.click("click", () => {
     let to = toCurrency.val();
     if (from && to) { //checks if both fields are present
         fromCurrencyName.text(from.toUpperCase());
-        let search = from + to;
-        search = search.toUpperCase();
         toCurrencyName.text(to.toUpperCase());
         getCurrencyData(to.toUpperCase());
     }
