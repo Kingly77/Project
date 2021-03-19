@@ -4,7 +4,8 @@ let currentWeather;
 let currentTime;
 
 dayjs.extend(window.dayjs_plugin_utc)
-
+ 
+// get data  using fetch request and error handling
 function getData() {
 
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${key}`).then(data => data.json()).then(data => {
@@ -39,7 +40,8 @@ $('#lookup').click(() => {
     $(`#cityName`)[0].textContent = `${cityName}`;
     getData();
 })
-
+ 
+// get icons and background image based on the current time using swich conditionals
 function getIcon(weather, time) {
     console.log(time);
     console.log(weather);
@@ -133,6 +135,7 @@ let fromCurrencyName = $('#fromCurrencyName');
 let display = $("#display");
 const API_key = '987fc53b7ae54560adc503005e61ccb9';
 
+// get the currency exchange using fetch request method
 function getCurrencyData(search) {
     display.removeClass("hidden");
     console.log(search)
@@ -160,7 +163,8 @@ searchCurrencyBtn.click("click", () => {
     let from = fromCurrency.val();
     console.log(from);
     let to = toCurrency.val();
-    if (from && to) { //checks if both fields are present
+    if (from && to) { 
+        //checks if both fields are present
         fromCurrencyName.text(from.toUpperCase());
         let search = from + to;
         search = search.toUpperCase();
@@ -172,3 +176,5 @@ searchCurrencyBtn.click("click", () => {
         $(".lead").text("Please enter valid 3 letter country code");
     }
 });
+
+// End of JS
