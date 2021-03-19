@@ -34,7 +34,7 @@ console.log(currentWeather);
 $(`#cityName`)[0].textContent = `${cityName}`;
 
 $('#lookup').click(() => {
-    $('#weather').removeClass('hidden');
+    $('#weather').removeClass('hide');
     cityName = $('#input')[0].value;
     $(`#cityName`)[0].textContent = `${cityName}`;
     getData();
@@ -44,40 +44,79 @@ function getIcon(weather, time) {
     console.log(time);
     console.log(weather);
     let currentIcon = document.getElementById("forecast");
+    let currentTime = /^../.exec(time);
     switch (weather) {
         case "Clouds":
-            currentIcon.setAttribute("src", "./assets/images/wind.png");
-            //document.appendChild(currentIcon);
-            console.log(currentIcon);
+
+            if(currentTime > 19 || currentTime < 5) {
+                currentIcon.setAttribute("src", "./assets/images/clouds-night-icon.png");
+                document.body.style.backgroundImage = "url('./assets/images/cloudy-new.jpg')";
+                break;
+            }
+            else  {
+            currentIcon.setAttribute("src", "./assets/images/cloudy_daytime.png");
+            document.body.style.backgroundImage = "url('./assets/images/cloud-d.jpg')";
+            
             break;
+
+            }
         case "Clear":
 
-            if (/^../.exec(time) > 19) {
-                currentIcon.setAttribute("src", "./assets/images/Night clear.png");
+            if(currentTime > 19 || currentTime < 5) {
+                currentIcon.setAttribute("src", "./assets/images/clear-night-icon.png");
+                document.body.style.backgroundImage = "url('./assets/images/night.jpg')"
+                document.body.style.color = 'white' ;
                 break;
             }
-            else if (/^../.exec(time) <= 19) {
-                currentIcon.setAttribute("src", "./assets/images/sunny.png");
-                break;
+            else  {
+            currentIcon.setAttribute("src", "./assets/images/clear-dayicon.png");
+            document.body.style.backgroundImage = "url('./assets/images/clear-d.jpg')";
+            break;
 
             }
-        case "Snow":
-            currentIcon.setAttribute("src", "./assets/images/snow.png");
-            break;
-        case "Hail":
-            currentIcon.setAttribute("src", "./assets/images/hail.png");
-            break;
+            case "Snow":
+
+                if(currentTime > 19 || currentTime < 5) {
+                    currentIcon.setAttribute("src", "./assets/images/snowy-night-icon.jpg");
+                    document.body.style.backgroundImage = "url('./assets/images/snow-d.jpg')";
+                    break;
+                }
+                else  {
+                currentIcon.setAttribute("src", "./assets/images/snowy-dayicon.jpg");
+                document.body.style.backgroundImage = "url('./assets/images/snow-d.jpg')";
+                break;
+    
+                }
+            case "Hail":
+
+              if(currentTime > 19 || currentTime < 5) {
+                currentIcon.setAttribute("src", "./assets/images/hail-icon.png");
+                document.body.style.backgroundImage = "url('./assets/images/hail-n.jpg')";
+                break;
+                }
+                else  {
+                currentIcon.setAttribute("src", "./assets/images/hail-icon.png");
+                document.body.style.backgroundImage = "url('./assets/images/hail-d.jpg')";
+                break;
+        
+                }
         case "Rain":
-            if (/^../.exec(time) > 19) {
-                currentIcon.setAttribute("src", "./assets/images/Night rain.png");
+            if(currentTime > 19 || currentTime < 5 ) {
+                currentIcon.setAttribute("src", "./assets/images/rainy-dayicon.png");
+                document.body.style.backgroundImage = "url('./assets/images/rainy-d.jpg')";
+                
+                
                 break;
             }
-            else if (/^../.exec(time) <= 19) {
-                currentIcon.setAttribute("src", "./assets/images/rain.png");
-                break;
-            }
-
+            else {
+                currentIcon.setAttribute("src", "./assets/images/rainy-dayicon.png");
+                document.body.style.backgroundImage = "url('./assets/images/rainy-d.jpg)";
+                document.body.style.color = "white";
+            break;
+            }       
+            
     }
+
 
 
 }
