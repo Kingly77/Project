@@ -29,7 +29,6 @@ function getData() {
 }
 
 getData();
-console.log(currentWeather);
 
 $(`#cityName`)[0].textContent = `${cityName}`;
 
