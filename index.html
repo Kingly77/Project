@@ -1,68 +1,59 @@
-<!DOCTYPE html>
-
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <title>world Clock</title>
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>World Clock </title>
     <link rel="shortcut icon" href="./assets/images/favicon.png" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Staatliches&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
-        integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/style.css" type="text/css">
-
+    <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css' rel='stylesheet' type='text/css'>
+      <!-- optional CDN for Foundation Icons ^^ -->
+    <link rel="stylesheet" href="assets/CSS/style.css" type="text/css">
+  
 </head>
-<!-- Error handler-->
+<!--Error handlers using modals-->
 <div class="reveal" id="exampleModal1" data-reveal>
-    <h1>Error!!</h1>
-    <p class="lead"></p>
-    <button class="close-button" data-close aria-label="Close modal" type="button">
-        <span aria-hidden="true">&times;</span>
-    </button>
+  <h1>Error!!</h1>
+  <p class="lead"></p>
+  <button class="close-button" data-close aria-label="Close modal" type="button">
+      <span aria-hidden="true">&times;</span>
+  </button>
 </div>
-<!--end of Error Handler-->
 
+<!--body starts here-->
 <body>
-
-    <div class='grid-x '>
-
-
-        <header class="clock cell">
-            <h1 class="display"> World Clock </h1>
-
-            <p class="text">Yes! search it and our clock will pop up!</p>
-
-        </header>
-
-    </div>
-
-    <!--    <div class="grid-x">-->
-    <!-- card to show the data from the weather and time search -->
-    <div data-sticky-container class="right card_s">
-        <div class="cell small-3 sticky" data-sticky data-anchor="weather" data-margin-top="0">
-            <div class="card">
-                <div class="card-divider">
-                    <!-- <div class="cell"> -->
-                    <input type="search" placeholder="Enter city name" id='input' class="input">
-                    <button type="button" class="button" id="lookup" data-tooltip tabindex="1" title="Search"
-                        data-position="right" data-alignment="center"><i class="fas fa-search"></i></button>
-                    <!-- </div> -->
-                </div>
-            </div>
-        </div>
-
-        <div class="cell"></div>
-        <!-- card to show data from currency exchange -->
-        <div class="card sticky" data-sticky data-anchor="weather" data-margin-top="5">
+   <!--header stats here-->
+<header>
+  
+    <div class="medium-12 columns">
+      <h1 class="text">
+        <p>World Clock </p>
+        <p><img src="./assets/images/icons8-alarm-clock-48.png"/></p>
+      </h1>
+      <p class="text1">search it! and our app will provide you with the current and latest time, weather and currency exchage of your next move!</p>
+    </div> 
+  </div>
+  
+</header>
+  <!--Header ends here-->
+  <br>
+  <!--search city and currency exchange -->
+  <div class="row" id="row1">
+  <div class="medium-4 columns">
+        <p class="card-section">
+        <input type="search" placeholder="Enter city name" id='input' class="input">
+        <button type="button" class="button" id="lookup" data-tooltip tabindex="1" title="Search"
+                data-position="right" data-alignment="center">Search</button>
+        </p>
+        <p>
             <div class="card-divider">
                 <h4 class="title">Currency Converter</h4>
             </div>
             <!-- From and To searchbars -->
             <div class="card-section currencySearch">
-                <input type="search" id="changeCurrencyFrom">
+                <input type="search" class="input" id="changeCurrencyFrom" placeholder="From">
 
-                <input type="search" name="changeTo" id="changeCurrencyTo" placeholder="To">
+                <input type="search" class="input" name="changeTo" id="changeCurrencyTo" placeholder="To">
                 <button type="button" class="button currency" id="searchCurrency">Convert</button>
             </div>
             <div class="card-section currencySearch">
@@ -70,34 +61,39 @@
             </div>
             <div class="card-section hidden" id="display">
 
-                <p class="currency-data">1 <span id="fromCurrencyName"></span> = <span id="currencyValue"></span><span
-                        id="toCurrencyName"> </span></p>
+            <p class="currency-data">1 <span id="fromCurrencyName"></span> = <span
+                        id="currencyValue"></span><span id="toCurrencyName"> </span></p>
 
             </div>
-        </div>
-    </div>
+        </p>
+  </div>
+<!--clock and weather display-->
+
+<div class="medium-8 columns">
+    <div class="card card_w hide" id="weather">
+      
+      <div class="card-section ">
+          <p id='cityName' class="data"></p>
+          <p id="current-time" class="data"></p>
+          <p id="current-weather" class="data"></p>
+      </div>
+      <img id="forecast" alt="weather" width="50px" height="50px"/>
+  </div>
+  
+</div>
 
 
-    <div class="card card_w hidden" id="weather">
-        <img id="forecast" alt="weather" />
-        <div class="card-section">
-            <p id='cityName' class="data"></p>
-            <p id="current-time" class="data"></p>
-            <p id="current-weather" class="data"></p>
-        </div>
-    </div>
-    <!--    </div>-->
+
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.4/dayjs.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.4/plugin/utc.js"></script>
-    <script src="https://kit.fontawesome.com/71d6379c77.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/min/moment-with-locales.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
-        integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+    <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=9ak4XZbqDoNlNTqzFBMVZXRDc0bXaMNW4e2a5S2fRb7Fy6DBPPnIByQB9wm9DPjnTfWVCKjG0fAhyaWdwPCn4_yeo6COKpoJQkYslk5sQai95WFc1d29wXF2nsWB4mGV" charset="UTF-8"></script>
+    <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=9ak4XZbqDoNlNTqzFBMVZXRDc0bXaMNW4e2a5S2fRb7Fy6DBPPnIByQB9wm9DPjnTfWVCKjG0fAhyaWdwPCn4_yeo6COKpoJQkYslk5sQai95WFc1d29wXF2nsWB4mGV" charset="UTF-8"></script>
     <script>
-        $(document).foundation();
+      $(document).foundation();
     </script>
-    <script src="assets/js/app.js" rel="script" type="text/javascript"></script>
-</body>
-
+  <script src="assets/js/app.js" rel="script" type="text/javascript"></script>
+  </body>
 </html>

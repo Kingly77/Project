@@ -1,114 +1,105 @@
-body {
+body{
     margin: 0;
     padding: 0;
-    background-image: url(../images/chirayu-trivedi-pTb54lkyuNQ-unsplash.jpg);
+    background-image: url(./assets/images/background-pic.jpg);
     background-size: cover;
-    background-repeat: no-repeat;
-    background-color: #c9c8c9;
+    
+
+}
+
+
+.medium-12.columns {
+    background-color: rgba(151, 172, 211, 0.6);
+    background-size: cover;
     
 }
-
-.clock {
-    background-color: #d0792e /*rgb(201, 152, 176)*/;
-    color: whitesmoke;
-    background-size: cover;
-}
-
-.display {
-    text-align: center;
-    align-items: center;
-    font-size: 6rem;
-    font-family: cursive;
-    font-weight: bolder;
-    font-style: italic;
-    color:whitesmoke /*rgb(49, 4, 23)*/;
-
-}
-
 .text {
-    text-align: center;
-    align-items: center;
-    color: rgb(248, 244, 246);
-    font-size: 25px;
     font-family: cursive;
-    font-weight: bolder;
-    font-style: italic;
-    padding-bottom: 15px;
-}
-
-.top-bar-right {
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    font-size: 1rem;
-    font-family: cursive;
-    font-weight: bolder;
-    font-style: italic;
-    
-}
-
-.data
-{
-    font-size: 55px;
-    text-align: center;
-    font-weight: bold;
-}
-
-.menu {
-    margin-left: 25px;
-    background-color: black;
-    border:6px solid black;
-}
-
-.button {
-    background-color: #000fff; /*rgb(177, 52, 114);*/
-    color: white ;
-    height: 40px;
-    border-radius: 6px;
-    
-}
-
-.button:hover {
-    background-color: black;
-    color: white;
-}
-
-.currencySearch{
     display: flex;
-    flex-direction: row;
     justify-content: center;
+    align-items: center;
+    font-weight: bolder;
+    font-style: italic;
+    font-variant: normal;
+    color: rgb(11, 11, 105);
 }
-.currency{
-    margin:0;
+.text1 {
+    font-family: cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bolder;
+    font-style: italic;
+    font-variant: normal;
+    color: rgb(11, 11, 105);
+    font-size: 20px;
 }
-.currencySearch{
-    margin:0;
-    padding: 0;
+.medium-4.columns {
+    background-color: rgba(62, 173, 207, 0.6);
+    margin-left: 0;
+    border-radius: 40px ;
+    
+    
 }
-.title{
+.medium-8.columns {
+    
+    margin-left: 0;
+}
+.title , .button , .input {
+    font-family: cursive;
+}
+.input {
+    border-radius: 10px;
+}
+.card-section.currencySearch {
+    padding: 0px;
+    margin: 0;
+}
+.currency-data {
+    font-size: 30px;
+}
+.title {
+    font-family: cursive;
     font-weight: bold;
-    font-size: 25px;
-    text-align: center;
+    font-style: oblique;
+    font-size: 30px;
+    color: rgb(4, 4, 87,);
 }
-.hidden{
-    display: none;
-}
-.currency-data{
-    font-size: 35px;
-    text-align: center;
+#lookup.button {
+    border-radius: 10px;
+    color:  black;
     font-weight: bold;
+    background: white;
 }
 
-.card_w
-{
-    width: 60%;
-    margin-left: 30%;
+#searchCurrency {
+    border-radius: 10px;
+    color:  black;
+    font-weight: bold;
+    background: white;
+}
+.medium-8.columns{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+
+}
+.card-section {
+    font-family: cursive;
+    font-size: 3rem;
+    color: rgb(21, 11, 105);
+    padding: 10px;
+    margin: 0;
     
 }
 
-.card_s
-{
-    width: 350px;
-    border: black;
+#forecast {
+    width: 200px;
+    height: 200px;
 
+}
+.h4.title {
+    text-shadow: 10px rgb(9, 9, 114);
 }
