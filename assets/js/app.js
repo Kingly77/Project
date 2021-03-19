@@ -8,8 +8,9 @@ dayjs.extend(window.dayjs_plugin_utc)
 function getData() {
 
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${key}`).then(data => data.json()).then(data => {
-        console.log(data);
+
         if (data['name']) {
+
             $('#cityName').text(data['name']);
             currentWeather = data['weather']['0']['main'];
 
@@ -22,11 +23,12 @@ function getData() {
             getIcon(currentWeather, currentTime);
         }
         else {
-            $("#weather").addClass('hide');
+            $('#weather').addClass('hide');
             $('#exampleModal1').foundation('open');
             $(".lead").text("Please enter a valid city name");
 
         }
+
     })
         .catch(function (error) {
             $('#exampleModal1').foundation('open');
