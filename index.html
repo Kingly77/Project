@@ -1,17 +1,19 @@
 <!doctype html>
 <html class="no-js" lang="en">
+
 <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>World Clock </title>
     <link rel="shortcut icon" href="./assets/images/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
     <link href='https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css' rel='stylesheet'
-          type='text/css'>
+        type='text/css'>
     <!-- optional CDN for Foundation Icons ^^ -->
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
 
 </head>
+
 <!--Error handlers using modals-->
 <div class="reveal" id="exampleModal1" data-reveal>
     <h1>Error!!</h1>
@@ -22,70 +24,73 @@
 </div>
 
 <!--body starts here-->
+
 <body>
-<!--header stats here-->
-<header>
+    <!--header stats here-->
+    <header>
 
-    <div class="medium-12 columns">
-        <h1 class="text">
-            <p>World Clock </p>
-            <p><img src="./assets/images/icons8-alarm-clock-48.png"/></p>
-        </h1>
-        <p class="text1">search it! and our app will provide you with the current and latest time, weather and currency
-            exchage of your next move!</p>
-    </div>
+        <div class="medium-12 columns">
+            <h1 class="text">
+                <p>World Clock </p>
+                <p><img src="./assets/images/icons8-alarm-clock-48.png" /></p>
+            </h1>
+            <p class="text1">search it! and our app will provide you with the current and latest time, weather and
+                currency
+                exchage of your next move!</p>
+        </div>
 
 
-</header>
-<!--Header ends here-->
-<br>
-<!--search city and currency exchange -->
-<div class="row" id="row1">
-    <div class="medium-4 columns">
-        <p class="card-section">
-            <input type="search" placeholder="Enter city name" id='input' class="input">
-            <button type="button" class="button" id="lookup" data-tooltip tabindex="1" title="Search"
+    </header>
+    <!--Header ends here-->
+    <br>
+    <!--search city and currency exchange -->
+    <div class="row" id="row1">
+        <div class="medium-4 columns">
+            <p class="card-section">
+                <input type="search" placeholder="Enter city name" id='input' class="input">
+                <button type="button" class="button" id="lookup" data-tooltip tabindex="1" title="Search"
                     data-position="right" data-alignment="center">Search
-            </button>
-        </p>
-        <p>
-        <div class="card-divider">
-            <h4 class="title">Currency Converter</h4>
-        </div>
-        <!-- From and To searchbars -->
-        <div class="card-section currencySearch">
-            <input type="search" class="input" id="changeCurrencyFrom" placeholder="From">
-
-            <input type="search" class="input" name="changeTo" id="changeCurrencyTo" placeholder="To">
-            <button type="button" class="button currency" id="searchCurrency">Convert</button>
-        </div>
-        <div class="card-section currencySearch">
-
-        </div>
-        <div class="card-section hidden" id="display">
-
-            <p class="currency-data">1 <span id="fromCurrencyName"></span> = <span
-                    id="currencyValue"></span><span id="toCurrencyName"> </span></p>
-
-        </div>
-        </p>
-    </div>
-
-    <!--clock and weather display-->
-
-    <div class="medium-8 columns">
-        <div class="card card_w hide" id="weather">
-
-            <div class="card-section ">
-                <p id='cityName' class="data"></p>
-                <p id="current-time" class="data"></p>
-                <p id="current-weather" class="data"></p>
+                </button>
+            </p>
+            <p>
+            <div class="card-divider">
+                <h4 class="title">Currency Converter</h4>
             </div>
-            <img id="forecast" alt="weather" width="50px" height="50px"/>
+            <!-- From and To searchbars -->
+            <div class="card-section currencySearch">
+                <input type="search" class="input" id="changeCurrencyFrom" placeholder="From">
+
+                <input type="search" class="input" name="changeTo" id="changeCurrencyTo" placeholder="To">
+                <button type="button" class="button currency" id="searchCurrency">Convert</button>
+            </div>
+            <div class="card-section currencySearch">
+
+            </div>
+
+            <div class="card-section hide" id="display">
+
+                <p class="currency-data">1 <span id="fromCurrencyName"></span> = <span id="currencyValue"></span><span
+                        id="toCurrencyName"> </span></p>
+
+            </div>
+            </p>
         </div>
 
+        <!--clock and weather display-->
+
+        <div class="medium-8 columns">
+            <div class="card card_w hide" id="weather">
+
+                <div class="card-section ">
+                    <p id='cityName' class="data"></p>
+                    <p id="current-time" class="data"></p>
+                    <p id="current-weather" class="data"></p>
+                </div>
+                <img id="forecast" alt="weather" width="50px" height="50px" />
+            </div>
+
+        </div>
     </div>
-</div>
 
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.4/dayjs.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.4/plugin/utc.js"></script>
@@ -97,4 +102,5 @@
     </script>
     <script src="assets/js/app.js" rel="script" type="text/javascript"></script>
 </body>
+
 </html>
