@@ -11,13 +11,15 @@ function getData() {
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${key}`).then(data => data.json()).then(data => {
 
         $('#cityName').text(data['name']);
+        localStorage.setItem('Name', cityName);
+
         currentWeather = data['weather']['0']['main'];
-
-        console.log(currentWeather);
         $('#current-weather').text(currentWeather);
-        currentTime = dayjs.utc().utcOffset(data['timezone'] / 60).format('HH:mm');
+        localStorage.setItem('Weather', currentWeather);
 
+        currentTime = dayjs.utc().utcOffset(data['timezone'] / 60).format('HH:mm');
         $('#current-time').text(currentTime);
+        localStorage.setItem('Time', currentTime);
 
         getIcon(currentWeather, currentTime);
     })
@@ -30,7 +32,7 @@ function getData() {
 }
 
 getData();
-console.log(currentWeather);
+
 
 $(`#cityName`)[0].textContent = `${cityName}`;
 
@@ -43,8 +45,7 @@ $('#lookup').click(() => {
  
 // get icons and background image based on the current time using swich conditionals
 function getIcon(weather, time) {
-    console.log(time);
-    console.log(weather);
+    
     let currentIcon = document.getElementById("forecast");
     let currentTime = /^../.exec(time);
     switch (weather) {
@@ -151,6 +152,7 @@ function getCurrencyData(search) {
             }
             else {
                 currencyValue.text(` ${currencies[search]} `);
+                localStorage.setItem('One USD', currencies[search]);
             }
         })
         .catch(function (error) {
@@ -177,4 +179,4 @@ searchCurrencyBtn.click("click", () => {
     }
 });
 
-// End of JS
+// The END
