@@ -5,6 +5,15 @@ let currentTime;
 
 dayjs.extend(window.dayjs_plugin_utc)
 
+
+    let test =  localStorage.getItem("city");
+    let mon = localStorage.getItem("cur");
+    if(test)
+        $('#input').val(test);
+    if(mon)
+        $('#changeCurrencyTo').val(mon);
+
+
 function getData() {
 
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${key}`).then(data => data.json()).then(data => {
@@ -33,8 +42,6 @@ function getData() {
         .catch(function (error) {
             $('#exampleModal1').foundation('open');
             $(".lead").text(error);
-
-
         })
 }
 
@@ -45,6 +52,7 @@ $(`#cityName`)[0].textContent = `${cityName}`;
 $('#lookup').click(() => {
     $('#weather').removeClass('hide');
     cityName = $('#input')[0].value;
+    localStorage.setItem("city",cityName);
     $(`#cityName`)[0].textContent = `${cityName}`;
     getData();
 })
@@ -133,7 +141,7 @@ getIcon();
 
 // Currency Exchange from USD to any countries currency. (the api supports only from usd as it is the free version)
 let fromCurrency = $('#changeCurrencyFrom');
-$('#changeCurrencyFrom').val("USD");
+fromCurrency.val("USD");
 let toCurrency = $('#changeCurrencyTo');
 let searchCurrencyBtn = $('#searchCurrency');
 let currencyValue = $('#currencyValue');
@@ -169,6 +177,9 @@ searchCurrencyBtn.click("click", () => {
     let from = fromCurrency.val();
     console.log(from);
     let to = toCurrency.val();
+
+    localStorage.setItem("cur",to);
+
     if (from && to) { //checks if both fields are present
         fromCurrencyName.text(from.toUpperCase());
         toCurrencyName.text(to.toUpperCase());
